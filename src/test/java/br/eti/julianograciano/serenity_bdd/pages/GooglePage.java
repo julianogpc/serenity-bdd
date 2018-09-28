@@ -17,7 +17,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClick
  */
 public class GooglePage extends BasePage {
 
-    @FindBy(id = "lst-ib")
+    @FindBy(name = "q")
     private WebElement searchField;
 
     @FindBy(name = "btnK")
