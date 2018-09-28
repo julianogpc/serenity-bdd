@@ -41,6 +41,7 @@ public class GooglePage extends BasePage {
     }
 
     public void clickOnSearchGoogle() {
+        searchButton = wait.until(elementToBeClickable(searchButton));
         searchButton.click();
     }
 
