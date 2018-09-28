@@ -20,7 +20,7 @@ public class GooglePage extends BasePage {
     @FindBy(name = "q")
     private WebElement searchField;
 
-    @FindBy(name = "btnK")
+    @FindBy(id = "btnK")
     private WebElement searchButton;
 
     public GooglePage(WebDriver driver) {
