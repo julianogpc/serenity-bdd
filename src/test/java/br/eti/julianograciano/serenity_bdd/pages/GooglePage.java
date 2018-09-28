@@ -37,12 +37,10 @@ public class GooglePage extends BasePage {
     public void fillsSearchField(String text) {
         wait.until(driver -> searchField.isDisplayed());
         searchField.sendKeys(text);
-        wait.until(driver -> driver.findElement(By.className("sbqs_c")).isDisplayed());
         searchField.sendKeys(Keys.TAB);
     }
 
     public void clickOnSearchGoogle() {
-
         searchButton = wait.until(elementToBeClickable(searchButton));
         searchButton.click();
     }
