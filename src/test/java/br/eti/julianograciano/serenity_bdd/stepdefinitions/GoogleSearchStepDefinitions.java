@@ -6,7 +6,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
-import static org.hamcrest.Matchers.containsString;
+import java.util.List;
+
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -38,6 +40,11 @@ public class GoogleSearchStepDefinitions {
 
     @Then("^\"([^\"]*)\" should be mentioned in the results$")
     public void shouldBeMentionedInTheResults(String cats) {
-        assertThat(cats, containsString(cats));
+        //assertThat(googleSearchSteps.getSearchTitleList(), contains(cats));
+
+        List<String> list = googleSearchSteps.getSearchTitleList();
+        list.replaceAll(String::toUpperCase);
+        assertThat(list, hasItem(containsString(cats.toUpperCase())));
     }
+
 }
